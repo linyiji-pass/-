@@ -17,6 +17,40 @@
             body {
                 background-color: black;
             }
+            #popup {
+                position: absolute;
+                top: 500;
+                left: 0;
+                margin: 0 auto;
+                
+                background-color: red;
+                color: blue;
+                font-family: poppins;
+                
+                animation: slide 0.25s ease-out;
+            }
+            @keyframes slide {
+                from {
+                    transform: translateY(-100px);
+                }
+            }
+            input {
+                background-color: red;
+                border-radius: 5px;
+                border-color: red;
+                color: blue;
+            }
+            label {
+                color: blue;
+                background-color: orange;
+            }
+            img {
+                background-color: #00D2FF;
+                border-radius: 5px;
+                border-color: #00D2FF;
+                width: 350px;
+                height: 300px;
+            }
         </style>
     </head>
     <body>
@@ -35,6 +69,17 @@
             <label>密码：<input type="password" placeholder="请输入密码" value="乱七八糟" required="6"></label><br>
             <button type="submit">提交</button>
         </form>
+        <img>
+        <div style="background-color: red;color: blue;border-radius: 5px;">
+            <div>
+                <p>你好</p>
+            </div>
+        </div>
+        <button popovertarget="popup">open</button>
+        <div id="popup" popover>
+            hello<br>
+            <button popovertarget="popup" popovertargetaction="hide">close</button>
+        </div>
         <script>
             ba.onclick = function() {
                 alert("恭喜你获得100元。")
